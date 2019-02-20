@@ -1,10 +1,12 @@
-from gpiozero import LED
-from time import sleep
+#This is test2.py Thank you for seeing this program code!!!
+from gpiozero import Button,LED
+from signal import pause
 
-led=LED(23)
+def say_hello():
+    print("Hello!")
+    
+button1 = Button(24, pull_up=False)
 
-while True:
-    led.on()
-    sleep(0.35)
-    led.off()
-    sleep(0.15)
+button1.when_pressed = say_hello
+
+pause()
